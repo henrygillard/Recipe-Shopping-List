@@ -2,21 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const recipesCtrl = require("../controllers/recipes");
-
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
-
-// CREATE a recipe
-
-router.get("/recipes/index", recipesCtrl.index);
-
-router.get("/recipes/:id", recipesCtrl.show);
-
-router.post("/recipes/index", recipesCtrl.create);
-
+const isLoggedIn = require("../config/auth");
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -35,6 +21,23 @@ router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
+
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('home');
+});
+
+// GET recipes index
+router.get("/recipes/index", recipesCtrl.index);
+
+// GET show page 
+router.get("/recipes/:id", recipesCtrl.show);
+
+// POST create a recipe
+router.post("/recipes/index", isLoggedIn, recipesCtrl.create);
+
+
 
 
 
