@@ -6,7 +6,10 @@ const recipeSchema = new Schema({
         type: String,
         required: true,
     },
-    ingredients: [],
+    ingredients: [{
+        type: Schema.Types.ObjectId,
+        ref: "Ingredient"
+    }],
     directions: [],
 });
 

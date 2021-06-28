@@ -5,4 +5,4 @@ const recipesCtrl = require("../controllers/recipes");
 const isLoggedIn = require("../config/auth");
 
 
-
+router.delete("/recipes/:id", recipesCtrl);

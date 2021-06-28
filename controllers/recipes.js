@@ -3,8 +3,16 @@ const Recipe = require("../models/recipe");
 module.exports = {
     index,
     show,
-    create
+    create,
+    delete: deleteRecipe,
 };
+
+function deleteRecipe(req, res) {
+    const recipe = Recipe.id(req.params.id);
+    recipe.remove();
+    recipe.save();
+    res.redirect(`recipes/${recipe._id}`);
+}
 
 
 function create(req, res) {
