@@ -1,7 +1,12 @@
 <%- include('./partials/header') %>
 <h1>Welcome to Recipes!</h1>
 <a href="/recipes/index">View All Recipes</a>
+<form action="/recipes/index" method="POST">
+    <label">Recipe:</label>
+    <input type="text" name="name">
+    <input type="submit" value="Add Recipe">
 
+</form>
 
  
 

@@ -4,10 +4,10 @@ const User = require("./models/user");
 
 let u, r;
 
-Recipe.findOne({}, function(err, recipe) {
-    r = recipe
+Recipe.find({}, function(err, recipes) {
+    console.log(recipes.name)
 })
 
-User.findOne({}, function(err, user) {
-    u = user;
-})
+// User.findOne({}, function(err, user) {
+//     u = user;
+// })
