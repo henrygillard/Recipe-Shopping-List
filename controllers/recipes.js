@@ -1,1 +1,0 @@
-var Recipe = require("../models/recipe")
