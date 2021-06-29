@@ -1,12 +1,24 @@
-const Ingredient = require("../models/ingredient")
+const Recipe = require("../models/recipe");
 
 module.exports = {
-    create
+    create,
+    new: newIngredient
 }
 
-function create(req, res) {
-    Ingredient.create(req.body, function(err, ingredient) {
-        res.redirect(`/recipes/${req.params.id}`);
-    });
+function newIngredient(req, res) {
+    res.render("ingredients/new");
 }
+function create(req, res) {
+    Recipe.findById(req.parmas.id, function(err, recipe) {
+        req.body.user = req.user._id;
+        req.body.userName = req.user.name;
+        Recipe.ingredients.push(req.body);
+        recipe.save(function(err) {
+            res.redirect(`/recipes/${req.params.id}`);
+
+    })
+
+    })
+};
+
 

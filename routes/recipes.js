@@ -4,7 +4,7 @@ const recipesCtrl = require("../controllers/recipes");
 const isLoggedIn = require("../config/auth");
 
 // // GET recipes index
-router.get("/recipes/index", isLoggedIn, recipesCtrl.index);
+router.get("/recipes/index", recipesCtrl.index);
 
 // // GET show page 
 router.get("/recipes/:id", isLoggedIn, recipesCtrl.show);

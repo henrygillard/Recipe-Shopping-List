@@ -3,4 +3,7 @@ const router = express.Router();
 const ingredientsCtrl = require("../controllers/ingredients");
 const isLoggedIn = require("../config/auth");
 
-router.post("/recipes/:id/ingredients", isLoggedIn, ingredientsCtrl.create);
+router.get("/ingredients/new", ingredientsCtrl.new)
+router.post("/recipes/:id", isLoggedIn, ingredientsCtrl.create);
+
+module.exports = router;

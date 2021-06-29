@@ -1,10 +1,13 @@
 <%- include('../partials/header') %>
 <h1>Welcome to <%= recipe.name %> Show Page!</h1>
 <p>created by: <%= user.name %></p>
+<h3>Ingredients for <%= recipe.name %>:</h3>
+<ul>
+    <li>Ingredient goes here</li>
+</ul>
 
- <form action="/recipes/<%= recipe._id %>/ingredients"></form>       
- <label>Ingredients: </label>
- <input type="text">
+ <form action="/recipes/<%= recipe._id %>" method="POST"></form>       
+ <input type="text" name="ingredients">
  <input type="submit" value="Add Ingredient">
         
    
