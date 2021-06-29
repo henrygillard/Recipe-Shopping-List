@@ -8,6 +8,7 @@
     <a href="/recipes/index" >ALL RECIPES</a>
     <% if (user) { %>
     <a href="/auth/google" class="login">LOG OUT&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <p>Hello, <br><%= user.name %></p>
     <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>

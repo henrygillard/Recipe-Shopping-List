@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 <h1>Welcome to <%= recipe.name %> Show Page!</h1>
+<p>created by: <%= user.name %></p>
 
  <form action="/recipes/<%= recipe._id %>/ingredients"></form>       
  <label>Ingredients: </label>
