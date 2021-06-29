@@ -1,8 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const recipesCtrl = require("../controllers/recipes");
 const isLoggedIn = require("../config/auth");
 
+// // GET recipes index
+router.get("/recipes/index", isLoggedIn, recipesCtrl.index);
 
-router.delete("/recipes/:id", recipesCtrl);
+// // GET show page 
+router.get("/recipes/:id", isLoggedIn, recipesCtrl.show);
+
+// // POST create a recipe
+router.post("/recipes/index", isLoggedIn, recipesCtrl.create);
+
+// DELETE a recipe
+router.delete("/recipes/:id", isLoggedIn, recipesCtrl.delete);
+
+module.exports = router;

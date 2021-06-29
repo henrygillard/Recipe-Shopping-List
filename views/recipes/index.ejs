@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="/recipes/<%= r._id %>"><%= r.name %></a>
                 </a></li>
-                <form action="/recipes/index" method="POST">
+                <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
                 </form>
             </ul>

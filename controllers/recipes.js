@@ -8,10 +8,9 @@ module.exports = {
 };
 
 function deleteRecipe(req, res) {
-    Recipe.findOneAndDelete(
-        {_id: req.params.id, user: req.user._id}, function (err) {
-            res.redirect(`/recipes/index`);
-        
+    Recipe.findByIdAndDelete(
+        {_id: req.params.id}, function(err) {
+            res.redirect("/recipes/index");
         }
     )
 }

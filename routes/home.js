@@ -28,14 +28,9 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
-// GET recipes index
-router.get("/recipes/index", recipesCtrl.index);
 
-// GET show page 
-router.get("/recipes/:id", recipesCtrl.show);
 
-// POST create a recipe
-router.post("/recipes/index", isLoggedIn, recipesCtrl.create);
+
 
 
 
