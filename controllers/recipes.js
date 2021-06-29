@@ -8,15 +8,19 @@ module.exports = {
 };
 
 function deleteRecipe(req, res) {
-    const recipe = Recipe.id(req.params.id);
-    recipe.remove();
-    recipe.save();
-    res.redirect(`recipes/${recipe._id}`);
+    Recipe.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}, function (err) {
+            res.redirect(`/recipes/index`);
+        
+        }
+    )
 }
 
 
 function create(req, res) {
     const recipe = new Recipe(req.body);
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
     recipe.save(function(err) {
         if (err) return res.redirect("/home");
         res.redirect("/recipes/index")

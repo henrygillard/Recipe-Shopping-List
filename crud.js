@@ -8,6 +8,3 @@ Recipe.find({}, function(err, recipes) {
     console.log(recipes.name)
 })
 
-// User.findOne({}, function(err, user) {
-//     u = user;
-// })
