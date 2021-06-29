@@ -1,24 +1,39 @@
+
+const Ingredient = require("../models/ingredient");
 const Recipe = require("../models/recipe");
 
 module.exports = {
     create,
-    new: newIngredient
+    index,
+    delete: deleteOne
 }
 
-function newIngredient(req, res) {
-    res.render("ingredients/new");
+function deleteOne(req, res) {
+    Ingredient.findByIdAndDelete(
+        {"ingredients._id": req.params.id}, function(err) {
+            res.redirect(`/recipes/${req.params.id}`);
+        }
+    )
+}
+function index(req, res) {
+    Ingredient.find({}, function(err, ingredients) {
+        console.log(ingredients);
+        res.render("ingredients/index", {ingredients});
+
+    });
 }
 function create(req, res) {
-    Recipe.findById(req.parmas.id, function(err, recipe) {
-        req.body.user = req.user._id;
-        req.body.userName = req.user.name;
-        Recipe.ingredients.push(req.body);
-        recipe.save(function(err) {
-            res.redirect(`/recipes/${req.params.id}`);
-
+    Ingredient.create(req.body, function(err, ingredient) {
+        console.log(err);
+        Recipe.findById(req.params.id, function(err, recipe) {
+            recipe.ingredients.push(ingredient._id)
+            recipe.save(function(err) {
+                if (err) console.log(err);
+                res.redirect(`/recipes/${req.params.id}`)
+            })
+        })
     })
-
-    })
+    
 };
 
 

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<h1>Ingredients Page!</h1>
+<% ingredients.forEach(function(i) { %>
+<ul>
+    <li><%= i.ingredient %> ( <%= i.quantity %> )</li>
+ </ul>  
+<% }) %>     
+        
+   
+
+    
+
+<%- include('../partials/footer') %>
