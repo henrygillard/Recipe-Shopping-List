@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 <h1>Welcome to <%= recipe.name %> Show Page!</h1>
+<div id="user-info">
 <p>created by: <%= user.name %></p>
+<img src="<%= user.avatar %>" id="user-avatar">
 <h3>Ingredients for <%= recipe.name %>:</h3>
-
+</div>
 <% recipe.ingredients.forEach(function(i) {  %> 
 
 <ul>
