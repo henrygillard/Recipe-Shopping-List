@@ -44,7 +44,7 @@ body > main {
 }
 
 footer {
-  margin-top: 100vmin;
+  margin-top: 55vmin;
   display: flex;
   justify-content: center;
 }
@@ -75,4 +75,12 @@ nav > a:hover {
 
 .login img {
   height: 30px;
+}
+
+#welcome-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
 }
