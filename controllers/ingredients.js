@@ -10,8 +10,8 @@ module.exports = {
 
 function deleteOne(req, res) {
     Ingredient.findByIdAndDelete(
-        {"ingredients._id": req.params.id}, function(err) {
-            res.redirect(`/ingredients/index`);
+        {_id: req.params.id}, function(err) {
+            res.redirect("/ingredients/index");
         }
     )
 }

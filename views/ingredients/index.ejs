@@ -4,7 +4,7 @@
 <ul>
     <li><%= i.ingredient %> ( <%= i.quantity %> )</li>
     <% if (user) { %>
-       <form action="/ingredients/index?_method=DELETE" method="POST">
+       <form action="/ingredients/<%= i._id %>?_method=DELETE" method="POST">
        <button type="submit">X</button>
        </form>
        <% } %>
