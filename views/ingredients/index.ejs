@@ -3,6 +3,11 @@
 <% ingredients.forEach(function(i) { %>
 <ul>
     <li><%= i.ingredient %> ( <%= i.quantity %> )</li>
+    <% if (user) { %>
+       <form action="/ingredients/index?_method=DELETE" method="POST">
+       <button type="submit">X</button>
+       </form>
+       <% } %>
  </ul>  
 <% }) %>     
         

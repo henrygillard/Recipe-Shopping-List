@@ -9,10 +9,15 @@
     <li><%= i.ingredient %> (<%= i.quantity %>)</li>
     
     <!-- <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-    <button type="submit">X</button>
+        <button type="submit">X</button>
     </form> -->
 </ul>
 <% }); %> 
+<form action="/recipes/<%= recipe._id %>" method="POST">
+    <input type="text" name="ingredient">
+    <input type="number" name="quantity" value="1">
+    <input type="submit" value="Add Ingredient">
+</form>
 
 <section>
     <h3>Directions:</h3>

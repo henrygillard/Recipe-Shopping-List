@@ -13,7 +13,11 @@ const recipeSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Ingredient"
     }],
-    directions: String,
+    directions: {
+        type: String,
+        default: "None",
+    },
+        
     user: {
         type: Schema.Types.ObjectId,
         ref: "User" 
