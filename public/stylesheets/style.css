@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
@@ -40,6 +41,17 @@ body > main {
   background-color: #E8ECEB;
   padding: 20px;
   overflow-y: scroll;
+}
+
+footer {
+  margin-top: 100vmin;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
 }
 
 nav > a {
