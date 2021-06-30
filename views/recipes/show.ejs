@@ -14,13 +14,9 @@
 </ul>
 <% }); %> 
 
- <form action="/recipes/<%= recipe._id %>" method="POST">       
- <input type="text" name="ingredient">
- <input type="submit" value="Add Ingredient">
- <input type="number" name="quantity" value="1">
- <input type="submit" value="Add Quantity">
+<a href="/recipes/<%= recipe._id %>/edit">Edit This Recipe</a>
+
  
-</form>
         
    
 

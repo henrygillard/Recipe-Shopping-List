@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+<h1>This is the Edit Page for <%= recipe.name %></h1>
+
+<form action="/recipes/<%= recipe._id %>" method="PUT">       
+    <input type="text" name="ingredient">
+    <input type="submit" value="Add Ingredient">
+    <input type="number" name="quantity" value="1">
+    <input type="submit" value="Add Quantity">
+    
+   </form>
+
+<%- include('../partials/footer') %>

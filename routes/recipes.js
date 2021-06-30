@@ -12,7 +12,14 @@ router.get("/recipes/:id", isLoggedIn, recipesCtrl.show);
 // // POST create a recipe
 router.post("/recipes/index", isLoggedIn, recipesCtrl.create);
 
+// EDIT a recipe
+router.get("/recipes/:id/edit", isLoggedIn, recipesCtrl.edit);
+
+// UPDATE a recipe
+router.put("/recipes/:id", recipesCtrl.update);
+
 // DELETE a recipe
 router.delete("/recipes/:id", isLoggedIn, recipesCtrl.delete);
+
 
 module.exports = router;
