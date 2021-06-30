@@ -11,12 +11,12 @@ module.exports = {
 };
 
 function update(req, res) {
-    Recipe.findByIdAndUpdate(
+    Recipe.findOneAndUpdate(
         {_id: req.params.id},
         req.body,
         {new: true},
         function(err, recipe) {
-            res.redirect(`recipes/${recipe._id}`);
+            res.redirect(`/recipes/${recipe._id}`);
         }
     )
 }
