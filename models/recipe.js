@@ -22,6 +22,10 @@ const recipeSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User" 
     },
+    timeToMake: {
+        type: Number,
+        default: 5
+    },
     userName: String,
     userAvatar: String
 });
