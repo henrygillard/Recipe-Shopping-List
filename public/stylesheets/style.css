@@ -17,7 +17,10 @@ body {
     "nav"
     "main" */
 }
-
+img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
 body > nav {
   grid-area: nav;
   background-color: #B8C0C2;
@@ -25,6 +28,31 @@ body > nav {
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 2px solid rgba(0,0,0,.125);
+  border-radius: 2.25rem;
+  margin-left: 18em;
+  margin-top: 20px;
+}
+
+h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  justify-content: center;
+  display: flex;
+  text-decoration: underline;
 }
 
 nav > img {
@@ -52,6 +80,7 @@ footer {
 h1 {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 nav > a {
@@ -83,4 +112,10 @@ nav > a:hover {
   align-items: center;
   justify-content: center;
   margin-top: 10em;
+}
+
+.user-tile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }

@@ -1,34 +1,46 @@
 <%- include('../partials/header') %>
-<h1>Welcome to <%= recipe.name %> Show Page!</h1>
-<div id="user-info">
-<p>created by: <%= user.name %></p>
-<img src="<%= user.avatar %>" id="user-avatar">
-<h3>Ingredients for <%= recipe.name %>:</h3>
-</div>
-<% recipe.ingredients.forEach(function(i) {  %> 
 
-<ul>
-    <li><%= i.ingredient %> (<%= i.quantity %>)</li>
-    
-    <!-- <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
-    </form> -->
-</ul>
-<% }); %> 
+<div class="card" style="width: 20rem;">
+    <div class="card-body">
+        <h1 class="card-title"><%= recipe.name %> </h1>
+        <div class="user-tile">
+            <h6 class="card-subtitle mb-2 text-muted">Recipe by: <%= user.name %> </h6>
+            <img src="<%= user.avatar %>" id="user-avatar" style="width: 30px;">
+        </div>
+        <div>
+            <h6 class=>Directions: </h6>
+            <p class="card-text"><%= recipe.directions %></p>
+
+        </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ingredients: </h5>
+        </div>
+        <% recipe.ingredients.forEach(function(i) {  %> 
+        <ul class="list-group list-group-flush"> 
+            <li class="list-group-item"><%= i.ingredient %> (<%= i.quantity %>)</li>
+        </ul>
+        <% }); %> 
+        <div class="card-body">
+            <p class="card-text">Time to Make: <%= recipe.timeToMake %>min</p>
+        <div class="card-body">
+            <a href="/recipes/<%= recipe._id %>/edit" class="card-link">Edit This Recipe</a>
+
+        </div>
+        
+    </div>
+    </div>
+
+
+
+
 <form action="/recipes/<%= recipe._id %>" method="POST">
     <input type="text" name="ingredient">
     <input type="number" name="quantity" value="1">
     <input type="submit" value="Add Ingredient">
 </form>
 
-<section>
-    <h3>Directions:</h3>
-    <p><%= recipe.directions %></p>
-    <h3>Time to Prepare: </h3>
-    <p><%= recipe.timeToMake %>min</p>
-</section>
 
-<a href="/recipes/<%= recipe._id %>/edit">Edit This Recipe</a>
 
  
         

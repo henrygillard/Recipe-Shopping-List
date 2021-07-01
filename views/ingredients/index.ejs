@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 <h1>Ingredients Page!</h1>
 <% ingredients.forEach(function(i) { %>
-<ul>
-    <li><%= i.ingredient %> ( <%= i.quantity %> )</li>
+
+    <table><%= i.ingredient %> ( <%= i.quantity %> )</table>
     <% if (user) { %>
        <form action="/ingredients/<%= i._id %>?_method=DELETE" method="POST">
        <button type="submit">X</button>
        </form>
        <% } %>
- </ul>  
+ 
 <% }) %>     
         
    
