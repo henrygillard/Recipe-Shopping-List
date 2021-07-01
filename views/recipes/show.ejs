@@ -4,8 +4,8 @@
     <div class="card-body">
         <h1 class="card-title"><%= recipe.name %> </h1>
         <div class="user-tile">
-            <h6 class="card-subtitle mb-2 text-muted">Recipe by: <%= user.name %> </h6>
-            <img src="<%= user.avatar %>" id="user-avatar" style="width: 30px;">
+            <h6 class="card-subtitle mb-2 text-muted">Recipe by: <%= recipe.userName %> </h6>
+            <img src="<%= recipe.userAvatar %>" id="user-avatar" style="width: 30px;">
         </div>
         <div>
             <h6 class=>Directions: </h6>
@@ -32,14 +32,22 @@
     </div>
 
 
-
-
+    <% if (user && user._id.equals(recipe.user)) { %>
+<section class="add-ingredient">
 <form action="/recipes/<%= recipe._id %>" method="POST" class="add-ingredient">
-    <input type="text" name="ingredient" class="form-control" required>
-    <input type="number" name="quantity" value="1" class="form-control" id="quantity">
-    <button class="btn btn-outline-secondary" id="button-addon1">ADD INGREDIENT</button>
-</form>
+    <div class="ingredient-quantity">
+        <input type="text" name="ingredient" class="form-control" required>
+        <input type="number" name="quantity" value="1" class="form-control" id="quantity">
 
+    </div>
+    
+    <div>
+        <button class="btn btn-outline-secondary" id="button-addon1">ADD INGREDIENT</button>
+
+    </div>
+</form>
+</section>
+<% } %>
 
 
 
