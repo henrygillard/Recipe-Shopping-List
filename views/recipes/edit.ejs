@@ -21,4 +21,11 @@
 
     </form>
 
+    <% if (user && user._id.equals(recipe.user)) { %>
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Recipe and All Ingredients</button>
+        </form>
+    <% } %>
+
+
     <%- include('../partials/footer') %>
