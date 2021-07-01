@@ -119,3 +119,14 @@ nav > a:hover {
   flex-direction: row;
   align-items: flex-end;
 }
+
+.add-ingredient {
+  display: flex;
+  width: 40em;
+  margin-left: 9em;
+  margin-top: 2em;
+}
+
+#quantity {
+  width: 57px;
+}

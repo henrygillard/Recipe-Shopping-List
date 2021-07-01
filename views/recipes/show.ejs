@@ -34,11 +34,12 @@
 
 
 
-<form action="/recipes/<%= recipe._id %>" method="POST">
-    <input type="text" name="ingredient">
-    <input type="number" name="quantity" value="1">
-    <input type="submit" value="Add Ingredient">
+<form action="/recipes/<%= recipe._id %>" method="POST" class="add-ingredient">
+    <input type="text" name="ingredient" class="form-control" placeholder="">
+    <input type="number" name="quantity" value="1" class="form-control" id="quantity">
+    <button class="btn btn-outline-secondary" id="button-addon1">ADD INGREDIENT</button>
 </form>
+
 
 
 
