@@ -8,11 +8,13 @@ test {
 
 }
 
+
 body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100%;
   background-color: #f9f2dc;
+  background-image: url("https://images.unsplash.com/photo-1498522271744-cdd435c13f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1054&q=80");
 }
 
 a {
@@ -25,7 +27,7 @@ img {
 }
 body > nav {
   grid-area: nav;
-  background-color: #B78D60;
+  background-color: #b78d60d4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -208,4 +210,9 @@ nav > a:hover {
 a:hover {
   color: #5494B3;
   
+}
+
+.container {
+  background-color: #ffffff91;
+  border-radius: 3em;
 }
