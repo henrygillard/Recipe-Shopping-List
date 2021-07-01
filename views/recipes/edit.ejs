@@ -3,27 +3,30 @@
     </h1>
 
     <form id="edit-form" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-        <div>
+        <div class="mb-3">
             <label for="recipe-name" class="form-label">Recipe Name: </label>
             <input type="text" name="name" class="form-control" value="<%= recipe.name %>">
         </div>
-        <div>
+        <div class="mb-3">
             <label for="directions" class="form-label">Input Directions: </label>
             <textarea name="directions" id="directions-input" class="form-control" cols="30"
                 rows="10"><%= recipe.directions %></textarea>
         </div>
-        <div>
+        <div class="mb-3">
             <label for="timeToMake">Time to Make: </label>
             <input type="number" name="timeToMake" class="form-control" value= "<%=recipe.timeToMake %>">
 
         </div>
-        <input type="submit" value="Update">
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Update</button>
+
+        </div>
 
     </form>
 
     <% if (user && user._id.equals(recipe.user)) { %>
         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Recipe and All Ingredients</button>
+            <button type="submit" class="btn btn-danger">Delete Recipe and All Ingredients</button>
         </form>
     <% } %>
 
