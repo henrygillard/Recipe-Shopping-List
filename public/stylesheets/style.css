@@ -8,15 +8,6 @@ a {
   color: black;
 }
 
-body {
-  /* margin: 0;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: 
-    "nav"
-    "main" */
-}
 img {
   vertical-align: middle;
   margin-left: 10px;

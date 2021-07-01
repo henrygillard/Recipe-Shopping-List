@@ -23,16 +23,19 @@
         <% }); %> 
         <div class="card-body">
             <p class="card-text">Time to Make: <%= recipe.timeToMake %>min</p>
-        <div class="card-body">
-            <a href="/recipes/<%= recipe._id %>/edit" class="card-link">Edit This Recipe</a>
+            <% if (user && user._id.equals(recipe.user)) { %>
+            <div class="card-body">
+                <a href="/recipes/<%= recipe._id %>/edit" class="card-link">Edit This Recipe</a>
 
+                
+            </div>
+            <% } %>
+            
         </div>
-        
     </div>
-    </div>
-
-
     <% if (user && user._id.equals(recipe.user)) { %>
+
+
 <section class="add-ingredient">
 <form action="/recipes/<%= recipe._id %>" method="POST" class="add-ingredient">
     <div class="ingredient-quantity">
