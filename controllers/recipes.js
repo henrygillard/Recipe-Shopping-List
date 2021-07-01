@@ -31,17 +31,20 @@ function edit(req, res) {
 
 function deleteRecipe(req, res) {
     Recipe.findByIdAndDelete(
-        {_id: req.params.id}, function(err) {
-            res.redirect("/recipes/index");
+        {_id: req.params.id, user: req.user._id}, function(err, recipe) {
+            Ingredient.deleteMany({_id: recipe.ingredients}, function(err) {
+                res.redirect("/recipes/index");
+            });
         }
     )
 }
 
 
 function create(req, res) {
-    const recipe = new Recipe(req.body);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
+    const recipe = new Recipe(req.body);
     recipe.save(function(err) {
         if (err) return res.redirect("/home");
         res.redirect("/recipes/index")

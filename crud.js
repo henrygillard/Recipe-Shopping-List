@@ -1,15 +1,18 @@
 require('dotenv').config();
 require('./config/database')
-const Recipes = require('./models/recipe');
-const Ingredients = require('./models/ingredient');
-const Users = require("./models/user");
+const Recipe = require('./models/recipe');
+const Ingredient = require('./models/ingredient');
+const User = require("./models/user");
 
 
 
-Recipes.find({}, function(err, recipes) {
+Recipe.find({}, function(err, recipes) {
     console.log(recipes)
     
 })
 
 
 
+User.find({}, function(err, users) {
+    console.log(users);
+})

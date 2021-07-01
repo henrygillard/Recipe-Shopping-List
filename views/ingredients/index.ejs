@@ -2,11 +2,7 @@
 <h1>Ingredients Page!</h1>
 <div id="ingredients-list">
 <% ingredients.forEach(function(i) { %>
-<% if (user) { %>
-   <form action="/ingredients/<%= i._id %>?_method=DELETE" method="POST">
-   <button type="submit">X</button>
-   </form>
-   <% } %>
+
     <ul class="list-group list-group-horizontal">
         <li class="list-group-item"><%= i.ingredient %> ( <%= i.quantity %> )</li>
     </ul>
