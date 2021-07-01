@@ -1,7 +1,18 @@
+test {
+  colors: #f9f2dc;
+  colors: #B78D60;
+  colors: #d8a37b4d;
+  colors: #5494B3;
+  colors: #847C3A;
+  
+
+}
+
 body {
-  padding: 50px;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100%;
+  background-color: #f9f2dc;
 }
 
 a {
@@ -14,26 +25,42 @@ img {
 }
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #B78D60;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+  margin-bottom: 20px;
 }
 .card {
+ 
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-width: 100px;
+  width: 100%;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #ffffffb8;
   background-clip: border-box;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: 2.25rem;
-  margin-left: 18em;
-  margin-top: 20px;
+  
+  
+  padding: 20px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  padding: 1rem 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card>.list-group {
+  border-top: inherit;
+  border-bottom: inherit;
+  align-items: center;
 }
 
 h5, h6 {
@@ -50,6 +77,7 @@ nav > img {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
+  
 }
 
 body > main {
@@ -79,11 +107,12 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color: white;
 }
 
 nav > a:hover {
   color: white;
-  background-color: #424748;
+  background-color: #847C3A;
 }
 
 .login {
@@ -153,5 +182,30 @@ nav > a:hover {
 }
 
 #edit-form {
+  padding: 10px;
+}
+.btn {
+  background-color: #5494B3;
+}
+.btn-outline-secondary {
+  color: white;
+}
+.btn:hover {
+  background-color: #847C3A;
+}
+
+.list-group-flush>.list-group-item:last-child {
+  border-bottom-width: 0;
+  background-color: transparent;
+}
+
+.card-subtitle {
+  margin-top: -.25rem;
+  margin-bottom: 0;
+  color: #847C3A;
+}
+
+a:hover {
+  color: #5494B3;
   
 }

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
     <h1>Edit <%= recipe.name %>
     </h1>
-
+    <section class="container" id="edit">
     <form id="edit-form" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
         <div class="mb-3">
             <label for="recipe-name" class="form-label">Recipe Name: </label>
@@ -26,9 +26,9 @@
 
     <% if (user && user._id.equals(recipe.user)) { %>
         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger">Delete Recipe and All Ingredients</button>
+            <button type="submit" style="margin-left: 10px;" class="btn btn-danger">Delete Recipe and All Ingredients</button>
         </form>
     <% } %>
-
+</section>
 
     <%- include('../partials/footer') %>
