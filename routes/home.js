@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const isLoggedIn = require("../config/auth");
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -21,20 +20,8 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('home');
 });
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;

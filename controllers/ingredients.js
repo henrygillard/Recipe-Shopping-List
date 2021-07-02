@@ -7,7 +7,6 @@ module.exports = {
     index,
 }
 
-
 async function index(req, res) {
     const recipes = await Recipe.find({user: req.user._id});
     const ingredients = recipes.reduce((ingredients, recipe) => [...ingredients, ...recipe.ingredients], []);
@@ -16,7 +15,8 @@ async function index(req, res) {
         res.render("ingredients/index", {ingredients});
 
     });
-}
+};
+
 function create(req, res) {
     Ingredient.create(req.body, function(err, ingredient) {
         Recipe.findById(req.params.id, function(err, recipe) {

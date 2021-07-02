@@ -1,43 +1,44 @@
 <%- include('../partials/header') %>
-    <h1>All Recipes</h1>
+<h1>All Recipes</h1>
     <section class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Recipe</th>
-                <th>Time to Make</th>
-                <th>Created by</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% recipes.forEach(function(r) { %>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td><a href="/recipes/<%= r._id %>">
-                        <%= r.name %>
-                    </td>
-                    <td>
-                        <%= r.timeToMake %>min
-                    </td>
-                    <td>
-                        <%= r.userName %>
-                    </td>
-                    <td>
-                        <% if (user && user._id.equals(r.user)) { %>
-                            <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
-                                <button type="submit">X</button>
-                            </form>
-                        <% } %>
-                    </td>
+                    <th>Recipe</th>
+                    <th>Time to Make</th>
+                    <th>Created by</th>
+                    <th></th>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
-</section>
+            </thead>
+            <tbody>
+                <% recipes.forEach(function(r) { %>
+                    <tr>
+                        <td>
+                            <a href="/recipes/<%= r._id %>">
+                            <%= r.name %>
+                        </td>
+                        <td>
+                            <%= r.timeToMake %>min
+                        </td>
+                        <td>
+                            <%= r.userName %>
+                        </td>
+                        <td>
+                            <% if (user && user._id.equals(r.user)) { %>
+                                <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">X</button>
+                                </form>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </section>
 
 
 
 
 
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
