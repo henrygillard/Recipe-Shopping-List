@@ -13,9 +13,12 @@ body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 60em;
-  background-color: #f9f2dc;
-  background-image: url("https://images.unsplash.com/photo-1498522271744-cdd435c13f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1054&q=80");
+  font-size: medium;
+  background-color: #EDF3F3;
+  background-image: url(https://images.unsplash.com/photo-1498522271744-cdd435c13f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1054&q=80);
+  background-repeat: repeat;
 }
+
 
 a {
   color: black;
