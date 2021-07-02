@@ -24,6 +24,8 @@ View and Edit recipe's you've created!
 
 See all the ingredients you need to create your recipes on the My Shopping List Page
 
+[LINK TO Trello Board](https://trello.com/b/avU9D0AR/recipe-board)
+
 
 ## Technologies Used: 
 * HTML/CSS/JAVASCRIPT
